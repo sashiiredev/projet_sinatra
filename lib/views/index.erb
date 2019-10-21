@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>The Gossip Project</title>
+  </head>
+  <body>
+    <h1>Mon super site de gossip, depuis le dossier views !</h1>
+    <h2><a href="/gossips/new/">Creer un potin</a></h2>
+    <p>Bienvenue user, voici la liste des potins :</p>
+    <% gossips.each_with_index do |gossip, index| %>
+        <p>
+          <%= gossip.author %><br/>
+          <%= gossip.content %><br/>
+          <a href=/gossips/<%=index+1%>/>Show</a>
+          <% nb = gossip.comment != nil ? gossip.comment.split('..;..').length : 0%>
+          <p><small>
+            <% if nb == 0 %>
+              Aucun commentaire
+            <% else %>
+              <%=nb%> commentaires
+            <%end%>
+          </small></p>
+          <br/>
+      <% end %>
+  </body>
+</html>

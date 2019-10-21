@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>Editer un potin</title>
+  </head>
+  <body>
+    <h1>Editer le potin n°<%=nb%></h1>
+    <p>Balance ton potin via le formulaire ci-dessous</p>
+    <form action='/gossips/<%=nb%>/edit/' method='POST'>
+      Auteur : <%= gossip.author %><br/>
+      Modifier l'auteur :  <input type='text' name='new_gossip_author'/><br/>
+      Content : <%= gossip.content %><br/>
+      Modifier le content : <input type='text' name='new_gossip_content'/><br/>
+      <input type='submit'/>
+    </form>
+    <br/><br/>
+    <a href="/">Retour accueil</a>
+  </body>
+</html>
